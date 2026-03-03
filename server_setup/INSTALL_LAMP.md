@@ -1,3 +1,4 @@
+# Anexos 1, 2, 3 y 6
 # Instalación de Servidor LAMP y phpMyAdmin
 
 ## Apache y Firewall
