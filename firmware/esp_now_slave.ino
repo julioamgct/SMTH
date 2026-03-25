@@ -1,5 +1,4 @@
 // Anexo 13: Código del Esclavo ESP-NOW
-
 #include <ESP8266WiFi.h>
 #include <espnow.h>
 // Estructura para recibir datos
