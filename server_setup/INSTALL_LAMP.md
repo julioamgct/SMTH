@@ -1,4 +1,4 @@
-# Anexos 1, 2, 3, 6, 7
+# Anexos 1, 2, 3, 4, 5, 6, 7
 # Instalación de Servidor LAMP y phpMyAdmin
 
 ## Apache y Firewall
@@ -72,8 +72,26 @@ sudo mysql
 
 mysql -u root -p
 
+##  Creación de un servidor virtual para su sitio web
+
+sudo mkdir /var/www/your_domain
+sudo chown -R $USER:$USER /var/www/your_domain
+sudo nano /etc/apache2/sites-available/your_domain.conf
+sudo a2ensite your_domain
+sudo a2dissite 000-default
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+nano /var/www/your_domain/index.html
+
 CREATE USER 'sammy'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
 
 GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
 
 exit
+
+##  Prueba del procesamiento PHP en tu servidor web
+
+nano /var/www/your_domain/info.php
+<?php
+phpinfo();
+sudo rm /var/www/your_domain/info.php
